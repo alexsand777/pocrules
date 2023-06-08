@@ -1,7 +1,3 @@
-#Fri May 19 10:39:56 PDT 2023
-/home/melke/kogito-examples/kogito-quarkus-examples/dmn-quarkus-example/src/test/resources/application.properties=1684258051171
-configuration*?=E49FA3426BA481B521CEE8945C90B71A48F78189
-/home/melke/kogito-examples/kogito-quarkus-examples/dmn-quarkus-example/src/main/resources/application.properties=1684360712658
-/home/melke/kogito-examples/kogito-quarkus-examples/dmn-quarkus-example/src/test/java/org/kie/kogito/dmn/quarkus/example/TrafficViolationTest.java=1684258051171
-/home/melke/kogito-examples/kogito-quarkus-examples/dmn-quarkus-example/src/test/java/testscenario/KogitoScenarioJunitActivatorTest.java=1684258051171
-/home/melke/kogito-examples/kogito-quarkus-examples/dmn-quarkus-example/src/test/java/org/kie/kogito/dmn/quarkus/example/NativeTrafficViolationIT.java=1684258051171
+#Thu Jun 08 16:34:56 PDT 2023
+configuration*?=B7E2FD4A4E5270A8B91112A80E7215CD16F185D
+/home/melke/kogito-examples/kogito-quarkus-examples/productversion/src/main/resources/application.properties=1684818952286

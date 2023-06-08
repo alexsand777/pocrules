@@ -18,9 +18,7 @@
     <kogito.bom.artifact-id>kogito-bom</kogito.bom.artifact-id>
     <kogito.bom.version>1.37.0.Final</kogito.bom.version>
     <version.org.kie.kogito>1.37.0.Final</version.org.kie.kogito>
-     <maven.compiler.source>3.8.6</maven.compiler.source>
-    <maven.compiler.target>3.8.6</maven.compiler.target>
- 
+    
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -91,7 +89,7 @@
       <plugin>
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
-        <version>${quarkus-plugin.version}</version>
+        <version>3.1.1.Final</version>
         <executions>
           <execution>
             <goals>

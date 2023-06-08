@@ -3,11 +3,12 @@
   "kind" : "Deployment",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+      "app.quarkus.io/commit-id" : "4f31c471c30e170984ca26b2744a83b4f5da8d6b",
+      "app.quarkus.io/build-timestamp" : "2023-06-08 - 23:35:06 +0000"
     },
     "labels" : {
-      "app.kubernetes.io/name" : "product-version",
-      "app.kubernetes.io/version" : "1.37.0.Final"
+      "app.kubernetes.io/version" : "1.37.0.Final",
+      "app.kubernetes.io/name" : "product-version"
     },
     "name" : "product-version"
   },
@@ -15,18 +16,19 @@
     "replicas" : 1,
     "selector" : {
       "matchLabels" : {
-        "app.kubernetes.io/name" : "product-version",
-        "app.kubernetes.io/version" : "1.37.0.Final"
+        "app.kubernetes.io/version" : "1.37.0.Final",
+        "app.kubernetes.io/name" : "product-version"
       }
     },
     "template" : {
       "metadata" : {
         "annotations" : {
-          "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+          "app.quarkus.io/commit-id" : "4f31c471c30e170984ca26b2744a83b4f5da8d6b",
+          "app.quarkus.io/build-timestamp" : "2023-06-08 - 23:35:06 +0000"
         },
         "labels" : {
-          "app.kubernetes.io/name" : "product-version",
-          "app.kubernetes.io/version" : "1.37.0.Final"
+          "app.kubernetes.io/version" : "1.37.0.Final",
+          "app.kubernetes.io/name" : "product-version"
         }
       },
       "spec" : {
@@ -38,6 +40,9 @@
                 "fieldPath" : "metadata.namespace"
               }
             }
+          }, {
+            "name" : "JAVA_APP_JAR",
+            "value" : "/deployments/quarkus-run.jar"
           } ],
           "image" : "melke/product-version:1.37.0.Final",
           "imagePullPolicy" : "Always",
@@ -80,7 +85,8 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
-      "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+      "app.quarkus.io/commit-id" : "4f31c471c30e170984ca26b2744a83b4f5da8d6b",
+      "app.quarkus.io/build-timestamp" : "2023-06-08 - 23:35:06 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "product-version",
