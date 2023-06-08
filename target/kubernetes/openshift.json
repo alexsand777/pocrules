@@ -1,0 +1,185 @@
+[{
+  "apiVersion" : "apps.openshift.io/v1",
+  "kind" : "DeploymentConfig",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "product-version",
+      "app.kubernetes.io/version" : "1.37.0.Final",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "product-version"
+  },
+  "spec" : {
+    "replicas" : 1,
+    "selector" : {
+      "app.kubernetes.io/version" : "1.37.0.Final",
+      "app.kubernetes.io/name" : "product-version"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "app.openshift.io/vcs-url" : "<<unknown>>",
+          "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+        },
+        "labels" : {
+          "app.kubernetes.io/name" : "product-version",
+          "app.kubernetes.io/version" : "1.37.0.Final",
+          "app.openshift.io/runtime" : "quarkus"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          }, {
+            "name" : "JAVA_APP_JAR",
+            "value" : "/deployments/quarkus-run.jar"
+          } ],
+          "image" : "melke/product-version:1.37.0.Final",
+          "imagePullPolicy" : "Always",
+          "livenessProbe" : {
+            "failureThreshold" : 3,
+            "httpGet" : {
+              "path" : "/q/health/live",
+              "port" : 8080,
+              "scheme" : "HTTP"
+            },
+            "initialDelaySeconds" : 5,
+            "periodSeconds" : 10,
+            "successThreshold" : 1,
+            "timeoutSeconds" : 10
+          },
+          "name" : "product-version",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          } ],
+          "readinessProbe" : {
+            "failureThreshold" : 3,
+            "httpGet" : {
+              "path" : "/q/health/ready",
+              "port" : 8080,
+              "scheme" : "HTTP"
+            },
+            "initialDelaySeconds" : 5,
+            "periodSeconds" : 10,
+            "successThreshold" : 1,
+            "timeoutSeconds" : 10
+          }
+        } ]
+      }
+    },
+    "triggers" : [ {
+      "imageChangeParams" : {
+        "automatic" : true,
+        "containerNames" : [ "product-version" ],
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "product-version:1.37.0.Final"
+        }
+      },
+      "type" : "ImageChange"
+    } ]
+  }
+},{
+  "apiVersion" : "image.openshift.io/v1",
+  "kind" : "ImageStream",
+  "metadata" : {
+    "labels" : {
+      "app.kubernetes.io/name" : "product-version",
+      "app.kubernetes.io/version" : "1.37.0.Final"
+    },
+    "name" : "s2i-java"
+  },
+  "spec" : {
+    "dockerImageRepository" : "fabric8/s2i-java"
+  }
+},{
+  "apiVersion" : "image.openshift.io/v1",
+  "kind" : "ImageStream",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "product-version",
+      "app.kubernetes.io/version" : "1.37.0.Final",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "product-version"
+  },
+  "spec" : { }
+},{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "product-version",
+      "app.kubernetes.io/version" : "1.37.0.Final",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "product-version"
+  },
+  "spec" : {
+    "ports" : [ {
+      "name" : "http",
+      "port" : 80,
+      "protocol" : "TCP",
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app.kubernetes.io/name" : "product-version",
+      "app.kubernetes.io/version" : "1.37.0.Final"
+    },
+    "type" : "ClusterIP"
+  }
+},{
+  "apiVersion" : "build.openshift.io/v1",
+  "kind" : "BuildConfig",
+  "metadata" : {
+    "annotations" : {
+      "app.openshift.io/vcs-url" : "<<unknown>>",
+      "app.quarkus.io/build-timestamp" : "2023-05-25 - 21:57:25 +0000"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "product-version",
+      "app.kubernetes.io/version" : "1.37.0.Final",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "product-version"
+  },
+  "spec" : {
+    "output" : {
+      "to" : {
+        "kind" : "ImageStreamTag",
+        "name" : "product-version:1.37.0.Final"
+      }
+    },
+    "source" : {
+      "binary" : { }
+    },
+    "strategy" : {
+      "sourceStrategy" : {
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "s2i-java:2.3"
+        }
+      }
+    }
+  }
+}]

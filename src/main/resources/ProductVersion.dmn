@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_1C792953-80DB-4B32-99EB-25FBE32BAF9E" name="ProductVersion" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://github.com/kiegroup/drools/kie-dmn/_A4BCA8B8-CF08-433F-93B2-A2598F19ECFF">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_40731093-0642-4588-9183-1660FC55053B" name="tProductVersion" isCollection="false">
+    <dmn:itemComponent id="_39E88D9F-AE53-47AD-B3DE-8AB38D4F50B3" name="carrier" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_F539A13F-6909-4195-A401-A94368879191" name="state" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_1648EA0A-2463-4B54-A12A-D743A3E3EE7B" name="effectiveDate" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_178D0F02-6DB9-4EE6-8EBC-F3E1166A20B7" name="underwritingcompany" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_ABC1915E-86E9-4651-8514-8DD332763F88" name="program" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9F129EAA-4E71-4D99-B6D0-84EEC3AC43CC" name="packages" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="enumeration" id="_BEA04789-19B1-468E-B9CD-9C75D05E266E">
+        <dmn:text>"Custom", "Basic", "Enhanced", "Standard"</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_ACBAD538-A997-4892-A69C-D3F5EC2123DA" name="transaction" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9F0B5136-B11D-4607-A167-8622D619BC67" name="quoteDate" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_663947B7-983B-4A2F-A0C3-B6A40D260FB3" name="lob" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_FE094C8E-B5EA-4091-B52C-135675E2739A" name="quoteHonorDate" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_305D6E20-43CA-4CF6-9535-5F7D837F3650" name="tProductVersionResponse" isCollection="false">
+    <dmn:itemComponent id="_C5CCD4BE-A341-439C-8065-D856BCC6A356" name="state" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_92EBF214-501F-482F-AD46-2D30EEFF1CE2" name="lob" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_720AD85E-0099-4203-84AC-7E698C0E91F8" name="packages" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_1E704CFF-6428-4216-A8D4-E20C3466C78A" name="underwritingcompany" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_2189E0E2-7392-437A-A04D-ECFF9DB68C70" name="requestType" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_6D637BFE-6BBF-4D47-BEA3-856296AEE1E8" name="carrier" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8FE7A794-0F53-4CE4-8835-5B4E260154F9" name="effectiveDate" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B627C7D6-FFA0-41B0-91D1-88907E8934CA" name="status" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9AA82113-AC37-48FB-9AC4-14A302F11C74" name="primaryRatingState" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_82CDE625-6EA3-4C22-892F-B31B4E734585" name="productVersion" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_5B035321-C0EC-4311-8B73-A6EBED70B39C" name="productMinorVersion" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_993FEF69-2BF0-45D1-93F6-7541BF2DAB2B" name="productEffectiveDateNew" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_CEDA0E48-7392-4976-8421-477E227D695C" name="productEffectiveDateRenewal" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_AFBF61C6-1618-4B58-A1C8-28EAB5C16B1E" name="rateCappingFactor" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_EB9CA84F-FDF3-47D8-B0B4-07686FB63376" name="manuScriptID" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_1929CBD5-40E0-442D-B909-49CEDE0101DC" name="ProductVersion">
+    <dmn:extensionElements/>
+    <dmn:variable id="_C16CF9B1-5FAB-48A0-95E0-5FCD661E0406" name="ProductVersion" typeRef="tProductVersion"/>
+  </dmn:inputData>
+  <dmn:decision id="_4055D956-1C47-479C-B3F4-BAEB61F1C929" name="ProductVersionResponse">
+    <dmn:extensionElements/>
+    <dmn:variable id="_8C1EAC83-F251-4D94-8A9E-B03ACF6849CD" name="ProductVersionResponse" typeRef="tProductVersionResponse"/>
+    <dmn:informationRequirement id="_800A3BBB-90A3-4D9D-BA5E-A311DED0134F">
+      <dmn:requiredInput href="#_1929CBD5-40E0-442D-B909-49CEDE0101DC"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_C8F7F579-E06C-4A2F-8485-65FAFAC3FE6A" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_B53A6F0D-F72C-41EF-96B3-F31269AC0FED">
+        <dmn:inputExpression id="_974C8D01-728F-4CE5-8C69-BE884125B859" typeRef="string">
+          <dmn:text>ProductVersion.carrier</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_884F615C-E2D4-47CD-9680-B0CD0EB02AB4">
+        <dmn:inputExpression id="_2C5F4A42-89A3-403F-A1B7-3D9208782513" typeRef="string">
+          <dmn:text>ProductVersion.lob</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_DC796D89-BEE7-4FEB-9003-2D8C28D9A1E6">
+        <dmn:inputExpression id="_0D89AA8A-4583-4AD8-8C7F-9786425B239E" typeRef="string">
+          <dmn:text>ProductVersion.state</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_DECDD8FA-C940-4450-905A-D222E53C3789">
+        <dmn:inputExpression id="_8DCDE792-32C8-4059-9242-D1F9E796F8D2" typeRef="string">
+          <dmn:text>ProductVersion.underwritingcompany</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_8580838B-B30D-4876-A021-FE08204636BF">
+        <dmn:inputExpression id="_19D1C8BE-A49A-4BF3-815C-FA2F706D1206" typeRef="string">
+          <dmn:text>ProductVersion.program</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_ADFCC367-7AAB-4621-98AD-E753BA45D23A">
+        <dmn:inputExpression id="_3FF71B75-5088-4CC7-8321-0CDF8AC903B4" typeRef="Any">
+          <dmn:text>ProductVersion.packages</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_BD23447B-4F0A-44E7-82CD-00542AE03CAB">
+        <dmn:inputExpression id="_53C1F45A-BF6E-4854-936E-7439D804C8FD" typeRef="string">
+          <dmn:text>ProductVersion.transaction</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_56507D63-10DC-475F-8E3D-4ABD6936B835">
+        <dmn:inputExpression id="_3BF50A4E-9599-473A-86B7-42AE2A4E4AB9" typeRef="date">
+          <dmn:text>ProductVersion.effectiveDate</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_9012031F-9C01-44E5-8CD2-E6704D594504" name="primaryRatingState" typeRef="string"/>
+      <dmn:output id="_B5CC751A-D855-4E22-BC27-48ED5C94DE94" name="productEffectiveDateNew" typeRef="date"/>
+      <dmn:output id="_7CAC8240-E1A5-4FEB-A0D4-B8613F0DE54B" name="manuScriptID" typeRef="string"/>
+      <dmn:output id="_3CF41FBD-8453-4534-ADD1-5D9525E07481" name="rateCappingFactor" typeRef="string"/>
+      <dmn:output id="_D51EDE5D-F61F-4A57-94A2-49DB0C344B5D" name="productVersion" typeRef="string"/>
+      <dmn:output id="_06426382-549A-4FF5-BA91-621D3274B514" name="producrMinorVersion" typeRef="string"/>
+      <dmn:annotation name=""/>
+      <dmn:rule id="_B1ECE6A9-6B82-4A85-A7CA-5F96CDB0DCB6">
+        <dmn:inputEntry id="_0B3833A0-F5C8-40D4-BB58-9D8627A3E351">
+          <dmn:text>"mercury"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_341686E4-262F-487A-A5BB-4C13E67B73C1">
+          <dmn:text>"PersonalAuto"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_0A8EC8AB-2B30-4CAB-8D3A-2249FDC510E8">
+          <dmn:text>"CA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8E32FB52-413A-4D17-BCE6-ACF23F125CF1">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AC0929D4-5943-45A8-83DD-0B405FEFC00E">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_FA6B8202-DFF5-495C-98D4-58E2635FEAF3">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_53FFFEDC-7356-47B4-828B-CB5FB9C009FA">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_4C76EE52-CED3-4B18-A2F3-C91046A8AC7B">
+          <dmn:text>&gt;date("2023-01-01")</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_865E07BE-A419-4363-A6C0-F82A4E98C6C2">
+          <dmn:text>"TX"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F53F005A-421E-405D-BB5B-F4A41DC912F8">
+          <dmn:text>2022-03-15</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_79FF8FDD-3299-4DFD-AA14-D2022504BDAD">
+          <dmn:text>7</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8685A125-86F5-4B8D-B58A-B9C41F780D7D">
+          <dmn:text>"1.0"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_AAA18AFE-E459-4427-BEDA-9FFD1809F4F6">
+          <dmn:text>"28.1.0"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7678BED9-FBE3-46DE-A4D1-389585CEF394">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_EB528829-5736-4486-BAA2-981C9E555D45" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_C8F7F579-E06C-4A2F-8485-65FAFAC3FE6A">
+            <kie:width>50</kie:width>
+            <kie:width>254</kie:width>
+            <kie:width>271</kie:width>
+            <kie:width>198</kie:width>
+            <kie:width>255</kie:width>
+            <kie:width>186</kie:width>
+            <kie:width>343</kie:width>
+            <kie:width>177</kie:width>
+            <kie:width>350</kie:width>
+            <kie:width>119</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>186</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_1929CBD5-40E0-442D-B909-49CEDE0101DC" dmnElementRef="_1929CBD5-40E0-442D-B909-49CEDE0101DC" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="708" y="355" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_4055D956-1C47-479C-B3F4-BAEB61F1C929" dmnElementRef="_4055D956-1C47-479C-B3F4-BAEB61F1C929" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="709" y="210" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_800A3BBB-90A3-4D9D-BA5E-A311DED0134F" dmnElementRef="_800A3BBB-90A3-4D9D-BA5E-A311DED0134F">
+        <di:waypoint x="758" y="380"/>
+        <di:waypoint x="759" y="235"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

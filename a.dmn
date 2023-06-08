@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="http://camunda.org/schema/1.0/dmn" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="definition_countTest1" name="definition_countTest1" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="http://camunda.org/schema/1.0/dmn">
+  <dmn:extensionElements/>
+  <dmn:decision id="decision_countTest1" name="decision_countTest1">
+    <dmn:extensionElements/>
+    <dmn:decisionTable id="decisionTable_c6875a44-7492-4e5b-868c-9d58dd9d18e4" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="input_eb2c3e84-9144-4540-8d97-2a6bdaa35f81">
+        <dmn:inputExpression id="inputExpression_87f0d243-7608-4555-be4d-2f347f6b95d8" typeRef="string">
+          <dmn:text>packages</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="input_a31351b0-8578-4abc-bf38-97b442ee29cd">
+        <dmn:inputExpression id="inputExpression_a26994c4-64f4-4402-bbc1-b710e0297371" typeRef="long">
+          <dmn:text>term</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="output_6c2a010d-c633-4da6-b384-32aee7e720f1"/>
+      <dmn:annotation name=""/>
+      <dmn:rule id="rule_f8b9b777-cd24-44e7-a518-20a6bb5cfacd">
+        <dmn:inputEntry id="inputEntry_7bc80029-dfc4-484c-bb2d-d5444bb9df60">
+          <dmn:text>count(?[list contains(["P1","P2","P3","P4"], item)]) = 1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="inputEntry_1b8bcd0f-f470-40c7-b92b-5e5e83c5a32f">
+          <dmn:text>&gt;=24</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="outputEntry_fcc0e9cf-2329-4360-b31e-8e4d7f6b5219">
+          <dmn:text>"B1"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_993194bb-a7aa-48e9-a149-4741f8856752">
+        <dmn:inputEntry id="inputEntry_1ea691a9-c87f-49ae-bab7-41312e9605ef">
+          <dmn:text>count(?[list contains(["P1","P2","P3","P4"], item)]) = 2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="inputEntry_b9885aba-2ca2-48d7-8fdc-4b284ddb6c52">
+          <dmn:text>&gt;=24</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="outputEntry_05bcd623-5891-4178-9fb5-9f85f9546b7c">
+          <dmn:text>"B2"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_B601BA29-232C-4D0F-8AE6-E05286D3E075" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="decisionTable_c6875a44-7492-4e5b-868c-9d58dd9d18e4"/>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-decision_countTest1" dmnElementRef="decision_countTest1" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="50" y="50" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
