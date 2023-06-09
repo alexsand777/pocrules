@@ -1,1 +1,1 @@
-web: java -Dhttp.port=$PORT $JAVA_OPTS -jar target/product-version.jar
+web: java $JAVA_OPTS -jar target/product-version.jar
